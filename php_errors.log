@@ -1,0 +1,149 @@
+[03-May-2016 18:33:50 UTC] PHP Warning:  require_once(teste.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:33:50 UTC] PHP Stack trace:
+[03-May-2016 18:33:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:33:50 UTC] PHP Fatal error:  require_once(): Failed opening required 'teste.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:33:50 UTC] PHP Stack trace:
+[03-May-2016 18:33:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:34:01 UTC] PHP Warning:  require_once(~/teste.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:34:01 UTC] PHP Stack trace:
+[03-May-2016 18:34:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:34:01 UTC] PHP Fatal error:  require_once(): Failed opening required '~/teste.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:34:01 UTC] PHP Stack trace:
+[03-May-2016 18:34:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:34:11 UTC] PHP Warning:  require_once(/teste.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:34:11 UTC] PHP Stack trace:
+[03-May-2016 18:34:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:34:11 UTC] PHP Fatal error:  require_once(): Failed opening required '/teste.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:34:11 UTC] PHP Stack trace:
+[03-May-2016 18:34:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:34:59 UTC] PHP Warning:  require_once(/teste.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:34:59 UTC] PHP Stack trace:
+[03-May-2016 18:34:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:34:59 UTC] PHP Fatal error:  require_once(): Failed opening required '/teste.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:34:59 UTC] PHP Stack trace:
+[03-May-2016 18:34:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:36:01 UTC] PHP Warning:  require_once(teste.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:36:01 UTC] PHP Stack trace:
+[03-May-2016 18:36:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:36:01 UTC] PHP Fatal error:  require_once(): Failed opening required 'teste.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:36:01 UTC] PHP Stack trace:
+[03-May-2016 18:36:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:37:41 UTC] PHP Warning:  require_once(paybasicotecidos-thiagobasicotecidos.c9users.io/teste.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:37:41 UTC] PHP Stack trace:
+[03-May-2016 18:37:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:37:41 UTC] PHP Fatal error:  require_once(): Failed opening required 'paybasicotecidos-thiagobasicotecidos.c9users.io/teste.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:37:41 UTC] PHP Stack trace:
+[03-May-2016 18:37:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:38:19 UTC] PHP Warning:  require_once(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:38:19 UTC] PHP Stack trace:
+[03-May-2016 18:38:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:38:19 UTC] PHP Warning:  require_once(http://paybasicotecidos-thiagobasicotecidos.c9users.io/teste.php): failed to open stream: no suitable wrapper could be found in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:38:19 UTC] PHP Stack trace:
+[03-May-2016 18:38:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:38:19 UTC] PHP Fatal error:  require_once(): Failed opening required 'http://paybasicotecidos-thiagobasicotecidos.c9users.io/teste.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:38:19 UTC] PHP Stack trace:
+[03-May-2016 18:38:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:38:31 UTC] PHP Warning:  require_once(): https:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:38:31 UTC] PHP Stack trace:
+[03-May-2016 18:38:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:38:31 UTC] PHP Warning:  require_once(https://paybasicotecidos-thiagobasicotecidos.c9users.io/teste.php): failed to open stream: no suitable wrapper could be found in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:38:31 UTC] PHP Stack trace:
+[03-May-2016 18:38:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 18:38:31 UTC] PHP Fatal error:  require_once(): Failed opening required 'https://paybasicotecidos-thiagobasicotecidos.c9users.io/teste.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 18:38:31 UTC] PHP Stack trace:
+[03-May-2016 18:38:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 19:14:30 UTC] PHP Warning:  require_once(teste.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 19:14:30 UTC] PHP Stack trace:
+[03-May-2016 19:14:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 19:14:30 UTC] PHP Fatal error:  require_once(): Failed opening required 'teste.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 19:14:30 UTC] PHP Stack trace:
+[03-May-2016 19:14:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 19:15:00 UTC] PHP Warning:  require_once(./teste.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 19:15:00 UTC] PHP Stack trace:
+[03-May-2016 19:15:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 19:15:00 UTC] PHP Fatal error:  require_once(): Failed opening required './teste.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/index.php on line 8
+[03-May-2016 19:15:00 UTC] PHP Stack trace:
+[03-May-2016 19:15:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/index.php:0
+[03-May-2016 19:49:04 UTC] PHP Notice:  Unknown database 'c99' in /home/ubuntu/workspace/app/configapp.php on line 67
+[03-May-2016 19:49:04 UTC] PHP Stack trace:
+[03-May-2016 19:49:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/configapp.php:0
+[03-May-2016 19:49:04 UTC] PHP   2. trigger_error() /home/ubuntu/workspace/app/configapp.php:67
+[06-May-2016 11:09:46 UTC] PHP Warning:  require_once(../session.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/app/index.php on line 8
+[06-May-2016 11:09:46 UTC] PHP Stack trace:
+[06-May-2016 11:09:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/index.php:0
+[06-May-2016 11:09:46 UTC] PHP Fatal error:  require_once(): Failed opening required '../session.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/app/index.php on line 8
+[06-May-2016 11:09:46 UTC] PHP Stack trace:
+[06-May-2016 11:09:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/index.php:0
+[06-May-2016 11:10:06 UTC] PHP Warning:  require_once(../session.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/app/index.php on line 8
+[06-May-2016 11:10:06 UTC] PHP Stack trace:
+[06-May-2016 11:10:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/index.php:0
+[06-May-2016 11:10:06 UTC] PHP Fatal error:  require_once(): Failed opening required '../session.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/app/index.php on line 8
+[06-May-2016 11:10:06 UTC] PHP Stack trace:
+[06-May-2016 11:10:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/index.php:0
+[06-May-2016 11:53:08 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/ubuntu/workspace/app/session.php on line 6
+[06-May-2016 11:53:08 UTC] PHP Stack trace:
+[06-May-2016 11:53:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/index.php:0
+[06-May-2016 08:53:20 America/Sao_Paulo] PHP Warning:  Missing argument 1 for redireciona_login(), called in /home/ubuntu/workspace/app/session.php on line 18 and defined in /home/ubuntu/workspace/app/session.php on line 6
+[06-May-2016 08:53:20 America/Sao_Paulo] PHP Stack trace:
+[06-May-2016 08:53:20 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/index.php:0
+[06-May-2016 08:53:20 America/Sao_Paulo] PHP   2. require_once() /home/ubuntu/workspace/app/index.php:8
+[06-May-2016 08:53:20 America/Sao_Paulo] PHP   3. redireciona_login() /home/ubuntu/workspace/app/session.php:18
+[06-May-2016 10:37:38 America/Sao_Paulo] PHP Warning:  require_once(tabelas.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/app/validacao.php on line 38
+[06-May-2016 10:37:38 America/Sao_Paulo] PHP Stack trace:
+[06-May-2016 10:37:38 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/validacao.php:0
+[06-May-2016 10:37:38 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required 'tabelas.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/app/validacao.php on line 38
+[06-May-2016 10:37:38 America/Sao_Paulo] PHP Stack trace:
+[06-May-2016 10:37:38 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/validacao.php:0
+[06-May-2016 10:38:34 America/Sao_Paulo] PHP Warning:  require_once(tabelas.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/app/validacao.php on line 38
+[06-May-2016 10:38:34 America/Sao_Paulo] PHP Stack trace:
+[06-May-2016 10:38:34 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/validacao.php:0
+[06-May-2016 10:38:34 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required 'tabelas.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/app/validacao.php on line 38
+[06-May-2016 10:38:34 America/Sao_Paulo] PHP Stack trace:
+[06-May-2016 10:38:34 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/validacao.php:0
+[06-May-2016 10:40:35 America/Sao_Paulo] PHP Warning:  require_once(tabelas.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/app/validacao.php on line 38
+[06-May-2016 10:40:35 America/Sao_Paulo] PHP Stack trace:
+[06-May-2016 10:40:35 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/validacao.php:0
+[06-May-2016 10:40:35 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required 'tabelas.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/app/validacao.php on line 38
+[06-May-2016 10:40:35 America/Sao_Paulo] PHP Stack trace:
+[06-May-2016 10:40:35 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/validacao.php:0
+[06-May-2016 10:40:55 America/Sao_Paulo] PHP Warning:  require_once(tabelas.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/app/validacao.php on line 38
+[06-May-2016 10:40:55 America/Sao_Paulo] PHP Stack trace:
+[06-May-2016 10:40:55 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/validacao.php:0
+[06-May-2016 10:40:55 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required 'tabelas.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/app/validacao.php on line 38
+[06-May-2016 10:40:55 America/Sao_Paulo] PHP Stack trace:
+[06-May-2016 10:40:55 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/validacao.php:0
+[06-May-2016 16:09:52 America/Sao_Paulo] PHP Warning:  explode() expects at least 2 parameters, 1 given in /home/ubuntu/workspace/app/session.php on line 24
+[06-May-2016 16:09:52 America/Sao_Paulo] PHP Stack trace:
+[06-May-2016 16:09:52 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/index.php:0
+[06-May-2016 16:09:52 America/Sao_Paulo] PHP   2. require_once() /home/ubuntu/workspace/app/index.php:8
+[06-May-2016 16:09:52 America/Sao_Paulo] PHP   3. explode() /home/ubuntu/workspace/app/session.php:24
+[06-May-2016 19:41:01 UTC] PHP Warning:  require_once(config.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/app/logout.php on line 2
+[06-May-2016 19:41:01 UTC] PHP Stack trace:
+[06-May-2016 19:41:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/logout.php:0
+[06-May-2016 19:41:01 UTC] PHP Fatal error:  require_once(): Failed opening required 'config.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/app/logout.php on line 2
+[06-May-2016 19:41:01 UTC] PHP Stack trace:
+[06-May-2016 19:41:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/logout.php:0
+[08-May-2016 10:40:23 America/Sao_Paulo] PHP Warning:  array_search() expects at least 2 parameters, 1 given in /home/ubuntu/workspace/app/session.php on line 41
+[08-May-2016 10:40:23 America/Sao_Paulo] PHP Stack trace:
+[08-May-2016 10:40:23 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/index.php:0
+[08-May-2016 10:40:23 America/Sao_Paulo] PHP   2. require_once() /home/ubuntu/workspace/app/index.php:8
+[08-May-2016 10:40:23 America/Sao_Paulo] PHP   3. array_search() /home/ubuntu/workspace/app/session.php:41
+[08-May-2016 10:42:21 America/Sao_Paulo] PHP Warning:  array_search() expects at least 2 parameters, 1 given in /home/ubuntu/workspace/app/session.php on line 41
+[08-May-2016 10:42:21 America/Sao_Paulo] PHP Stack trace:
+[08-May-2016 10:42:21 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/index.php:0
+[08-May-2016 10:42:21 America/Sao_Paulo] PHP   2. require_once() /home/ubuntu/workspace/app/index.php:8
+[08-May-2016 10:42:21 America/Sao_Paulo] PHP   3. array_search() /home/ubuntu/workspace/app/session.php:41
+[08-May-2016 11:37:51 America/Sao_Paulo] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/app/logout.php on line 43
+[08-May-2016 11:37:51 America/Sao_Paulo] PHP Stack trace:
+[08-May-2016 11:37:51 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/logout.php:0
+[08-May-2016 11:37:51 America/Sao_Paulo] PHP   2. mysql_fetch_array() /home/ubuntu/workspace/app/logout.php:43
+[08-May-2016 11:37:51 America/Sao_Paulo] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/app/logout.php on line 46
+[08-May-2016 11:37:51 America/Sao_Paulo] PHP Stack trace:
+[08-May-2016 11:37:51 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/logout.php:0
+[08-May-2016 11:37:51 America/Sao_Paulo] PHP   2. mysql_num_rows() /home/ubuntu/workspace/app/logout.php:46
+[06-Jun-2016 11:17:16 UTC] PHP Warning:  require_once(../session.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/app/primeiro_acesso.php on line 11
+[06-Jun-2016 11:17:16 UTC] PHP Stack trace:
+[06-Jun-2016 11:17:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/primeiro_acesso.php:0
+[06-Jun-2016 11:17:16 UTC] PHP Fatal error:  require_once(): Failed opening required '../session.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/app/primeiro_acesso.php on line 11
+[06-Jun-2016 11:17:16 UTC] PHP Stack trace:
+[06-Jun-2016 11:17:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/primeiro_acesso.php:0

@@ -1,0 +1,4 @@
+2. No banco de dados (MySql)
+
+2.1 Conjunto de caracteres MySQL: UTF-8 Unicode (utf8)
+2.2 Collation de conexão do MySQL: utf8_unicode_ci
