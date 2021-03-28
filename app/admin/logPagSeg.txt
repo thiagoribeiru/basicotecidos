@@ -15,3 +15,7 @@ array (
   'notificationCode' => '822D5E-46756D756D0B-C664B75FA9AF-6C951A',
   'notificationType' => 'transaction',
 )
+array (
+  'notificationType' => 'transaction',
+  'notificationCode' => 'C4F552D1F9EDF9ED42C444678FA8D00507C2',
+)

@@ -1,9 +1,9 @@
 <?
 require_once('../configapp.php');
 if (isset($_GET) and $_GET['id']!="") {
-    $consultaQuery = mysql_query("select * from usuarios where id = '".$_GET['id']."'") or die (mysql_error());
-    if (mysql_num_rows($consultaQuery)==1) {
-        $consultaResult = mysql_fetch_array($consultaQuery);
+    $consultaQuery = $sql->query("select * from usuarios where id = '".$_GET['id']."'") or die (mysqli_error($sql));
+    if (mysqli_num_rows($consultaQuery)==1) {
+        $consultaResult = mysqli_fetch_array($consultaQuery);
         $retorno['id'] = $consultaResult['id'];
         $retorno['nome'] = $consultaResult['nome'];
         $retorno['email'] = $consultaResult['email'];

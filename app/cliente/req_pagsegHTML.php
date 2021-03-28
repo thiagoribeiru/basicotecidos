@@ -3,9 +3,9 @@ require_once('../session.php');
 
 if ($_SERVER['REQUEST_METHOD']=="GET" and $_GET['cod_ped']!="") {
     $ped = $_GET['cod_ped'];
-    $pesq_api = mysql_query("select * from dados_apipag where ativo = '1'") or die (mysql_query());
-    if (mysql_num_rows($pesq_api)>0) {
-        $dados = mysql_fetch_array($pesq_api);
+    $pesq_api = $sql->query("select * from dados_apipag where ativo = '1'") or die ($sql->query());
+    if (mysqli_num_rows($pesq_api)>0) {
+        $dados = mysqli_fetch_array($pesq_api);
         if ($dados['environment']=='sandbox') {
             $url = 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout';
             $token = $dados['tokensandbox'];
@@ -17,9 +17,9 @@ if ($_SERVER['REQUEST_METHOD']=="GET" and $_GET['cod_ped']!="") {
         $data['email'] = $dados['email'];
         $data['token'] = $token;
         $data['currency'] = 'BRL';
-        $itens_pesq = mysql_query("select * from pedidos_itens where ativo = '1' and cod_ped = '$ped'") or die (mysql_error());
-        for ($i=1;$i<=mysql_num_rows($itens_pesq);$i++) {
-            $item = mysql_fetch_array($itens_pesq);
+        $itens_pesq = $sql->query("select * from pedidos_itens where ativo = '1' and cod_ped = '$ped'") or die (mysqli_error($sql));
+        for ($i=1;$i<=mysqli_num_rows($itens_pesq);$i++) {
+            $item = mysqli_fetch_array($itens_pesq);
             $data['itemId'.$i] = $item['cod_prod'];
             $data['itemDescription'.$i] = $item['descricao']." (".number_format($item['quant'],2,',','.')." ".$item['uni']." - ".number_format($item['valor'],2,',','.')."/".$item['uni'].")";
             if ($item['desconto']>0) $data['itemDescription'.$i] .= " Desc.: ".number_format($item['desconto'],2,',','.')."%";
@@ -29,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD']=="GET" and $_GET['cod_ped']!="") {
             // $data['itemWeight1'] = '1000';
         }
         $data['reference'] = 'PED#'.$ped;
-        $pedido = mysql_fetch_array(mysql_query("select * from pedidos_dados where cod_ped = '$ped' and ativo = '1'")) or die (mysql_error());
-        $cliente = mysql_fetch_array(mysql_query("select * from usuarios where id = '".$pedido['id_cli']."' and ativo = '1'")) or die (mysql_error());
+        $pedido = mysqli_fetch_array($sql->query("select * from pedidos_dados where cod_ped = '$ped' and ativo = '1'")) or die (mysqli_error($sql));
+        $cliente = mysqli_fetch_array($sql->query("select * from usuarios where id = '".$pedido['id_cli']."' and ativo = '1'")) or die (mysqli_error($sql));
         $data['senderName'] = $cliente['nome'];
         // $data['senderAreaCode'] = '11';
         // $data['senderPhone'] = '56273440';

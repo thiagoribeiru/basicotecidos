@@ -10,13 +10,13 @@ if (!empty($_GET) AND (empty($_GET['email']) OR empty($_GET['senha']))) {
 }
 
 //variaveis novas recebem o que foi GETado no formulário
-$email = mysql_real_escape_string($_GET['email']);
-$senha = strtoupper(mysql_real_escape_string($_GET['senha']));
+$email = $sql -> real_escape_string($_GET['email']);
+$senha = strtoupper($sql -> real_escape_string($_GET['senha']));
 
 // Validação do usuário/senha digitados
-$sql = "SELECT `id`, `nome`, `nivel`, `ativo`, `primeiro_acesso`, `permissoes` FROM `usuarios` WHERE (`email` = '". $email ."') AND (`senha` = '". sha1($senha) ."') AND (`ativo` = 1) LIMIT 1";
-$query = mysql_query($sql);
-if (mysql_num_rows($query) != 1) {
+$sqlQuery = "SELECT `id`, `nome`, `nivel`, `ativo`, `primeiro_acesso`, `permissoes` FROM `usuarios` WHERE (`email` = '". $email ."') AND (`senha` = '". sha1($senha) ."') AND (`ativo` = 1) LIMIT 1";
+$query = $sql->query($sqlQuery);
+if (mysqli_num_rows($query) != 1) {
   // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrados
   $retorno['autoriza'] = 0;
   $retorno['mensagem'] = "Usuário ou senha inválidos! Se achar necessário, entre em contato!";
@@ -24,7 +24,7 @@ if (mysql_num_rows($query) != 1) {
   exit;
 } else {
   // Salva os dados encontados na variável $resultado
-  $resultado = mysql_fetch_assoc($query);
+  $resultado = mysqli_fetch_assoc($query);
   
    // Se a sessão não existir, inicia uma
   if (!isset($_SESSION)) session_start();
@@ -39,18 +39,18 @@ if (mysql_num_rows($query) != 1) {
   //criador de tabelas
   require_once("tabelas.php");
   
-  $numIds = mysql_num_rows(mysql_query("select id_user from users_logados where id_user = ".$_SESSION['UsuarioID']));
+  $numIds = mysqli_num_rows($sql->query("select id_user from users_logados where id_user = ".$_SESSION['UsuarioID']));
   if ($numIds==0){
-	  mysql_query("insert into users_logados (id_user, id_sessao, login, validade) 
-	  values ('".$_SESSION['UsuarioID']."','".session_id()."',now(),date_add(now(), interval $tempoOcioso second))") or die (mysql_error());
+	  $sql->query("insert into users_logados (id_user, id_sessao, login, validade) 
+	  values ('".$_SESSION['UsuarioID']."','".session_id()."',now(),date_add(now(), interval $tempoOcioso second))") or die (mysqli_error($sql));
   }
   if ($numIds==1) {
-	  mysql_query("update users_logados set id_sessao = '".session_id()."', validade = date_add(now(), interval $tempoOcioso second) where id_user = ".$_SESSION['UsuarioID']) or die (mysql_error());
+	  $sql->query("update users_logados set id_sessao = '".session_id()."', validade = date_add(now(), interval $tempoOcioso second) where id_user = ".$_SESSION['UsuarioID']) or die (mysqli_error($sql));
   }
   if ($numIds>1) {header("Location: logout.php"); exit;}
   
   //limpa usuarios com validade vencida a mais de 30minutos
-  mysql_query("delete from users_logados where now() > date_add(validade, interval 1 minute)") or die (mysql_error());
+  $sql->query("delete from users_logados where now() > date_add(validade, interval 1 minute)") or die (mysqli_error($sql));
   
   // Retorna autorização
   $retorno['autoriza'] = 1;

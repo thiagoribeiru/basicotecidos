@@ -16,13 +16,13 @@
         ?>
         <div id="div_corpo">
         <?
-        $pedidos_search = mysql_query("select cod_ped as cod, DATE_FORMAT(data,'%d/%m/%Y') as data, (select usuarios.nome from usuarios where id = pedidos_dados.id_cli) as cliente, (select usuarios.email from usuarios where id = pedidos_dados.id_cli) as login, (select pos_pedidos.nome from pos_pedidos where id = pedidos_dados.id_pos) as posicao from pedidos_dados where ativo = '1' and id_cli = '".$_SESSION['UsuarioID']."' order by cod_ped");
+        $pedidos_search = $sql->query("select cod_ped as cod, DATE_FORMAT(data,'%d/%m/%Y') as data, (select usuarios.nome from usuarios where id = pedidos_dados.id_cli) as cliente, (select usuarios.email from usuarios where id = pedidos_dados.id_cli) as login, (select pos_pedidos.nome from pos_pedidos where id = pedidos_dados.id_pos) as posicao from pedidos_dados where ativo = '1' and id_cli = '".$_SESSION['UsuarioID']."' order by cod_ped");
         echo "<form id=\"form_pedidos\">\n";
         echo "<span id=\"titulo\" style=\"min-width: 300px;\">Pedidos";
             // echo "<div class=\"caixa_corte\"><img src=\"../images/icons-1-18x18.png\" title=\"Adicionar Pedidos\" id=\"adc_ped\"></div>";
             // echo "<div class=\"caixa_corte\"><img src=\"../images/icons-1-18x18.png\" title=\"Remover Pedido\" id=\"rem_ped\"></div>";
         echo "</span>\n";
-        if (mysql_num_rows($pedidos_search)>0) {
+        if (mysqli_num_rows($pedidos_search)>0) {
             echo "<div id=\"div_janela\" style=\"min-height: 400px; min-width: 955px;\">\n";
                 echo "<table class=\"tabela\" id=\"tabela_pedidos_cli\">\n";
                     echo "<thead>\n";
@@ -36,8 +36,8 @@
                         echo "</tr>\n";
                     echo "</thead>\n";
                     echo "<tbody>\n";
-                    for ($i=0;$i<mysql_num_rows($pedidos_search);$i++) {
-                        $pedidos_linha = mysql_fetch_array($pedidos_search);
+                    for ($i=0;$i<mysqli_num_rows($pedidos_search);$i++) {
+                        $pedidos_linha = mysqli_fetch_array($pedidos_search);
                         echo "<tr ped=\"".$pedidos_linha['cod']."\">\n";
                             echo "<td>".mascara_string("####",$pedidos_linha['cod'])."</td>\n";
                             echo "<td>".$pedidos_linha['data']."</td>\n";
@@ -136,8 +136,8 @@
         </div>
     </body>
     <?
-    $pesq_api = mysql_query("select * from dados_apipag where ativo = '1'") or die (mysql_query());
-    $dados = mysql_fetch_array($pesq_api);
+    $pesq_api = $sql->query("select * from dados_apipag where ativo = '1'") or die ($sql->query());
+    $dados = mysqli_fetch_array($pesq_api);
     if ($dados['environment']=='sandbox') {
         echo "<script type=\"text/javascript\" src=\"https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js\"></script>\n";
     } else if ($dados['environment']=='production') {

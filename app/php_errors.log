@@ -73,192 +73,192 @@
 [08-May-2016 10:42:44 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/admin/index.php:0
 [08-May-2016 10:42:44 America/Sao_Paulo] PHP   2. require_once() /home/ubuntu/workspace/app/admin/index.php:8
 [08-May-2016 10:42:44 America/Sao_Paulo] PHP   3. array_search() /home/ubuntu/workspace/app/session.php:41
-[16-May-2016 11:22:58 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
+[16-May-2016 11:22:58 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
 [16-May-2016 11:22:58 UTC] PHP Stack trace:
 [16-May-2016 11:22:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/addUsersBd.php:0
-[16-May-2016 11:22:58 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
-[16-May-2016 11:22:58 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
+[16-May-2016 11:22:58 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
+[16-May-2016 11:22:58 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
 [16-May-2016 11:22:58 UTC] PHP Stack trace:
 [16-May-2016 11:22:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/addUsersBd.php:0
-[16-May-2016 11:22:58 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
-[16-May-2016 11:24:09 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
+[16-May-2016 11:22:58 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
+[16-May-2016 11:24:09 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
 [16-May-2016 11:24:09 UTC] PHP Stack trace:
 [16-May-2016 11:24:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/addUsersBd.php:0
-[16-May-2016 11:24:09 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
-[16-May-2016 11:24:09 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
+[16-May-2016 11:24:09 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
+[16-May-2016 11:24:09 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
 [16-May-2016 11:24:09 UTC] PHP Stack trace:
 [16-May-2016 11:24:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/addUsersBd.php:0
-[16-May-2016 11:24:09 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
-[16-May-2016 11:32:26 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
+[16-May-2016 11:24:09 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
+[16-May-2016 11:32:26 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
 [16-May-2016 11:32:26 UTC] PHP Stack trace:
 [16-May-2016 11:32:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/addUsersBd.php:0
-[16-May-2016 11:32:26 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
-[16-May-2016 11:32:26 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
+[16-May-2016 11:32:26 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
+[16-May-2016 11:32:26 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
 [16-May-2016 11:32:26 UTC] PHP Stack trace:
 [16-May-2016 11:32:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/addUsersBd.php:0
-[16-May-2016 11:32:26 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
-[16-May-2016 11:32:36 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
+[16-May-2016 11:32:26 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
+[16-May-2016 11:32:36 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
 [16-May-2016 11:32:36 UTC] PHP Stack trace:
 [16-May-2016 11:32:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/addUsersBd.php:0
-[16-May-2016 11:32:36 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
-[16-May-2016 11:32:36 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
+[16-May-2016 11:32:36 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
+[16-May-2016 11:32:36 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/addUsersBd.php on line 7
 [16-May-2016 11:32:36 UTC] PHP Stack trace:
 [16-May-2016 11:32:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/addUsersBd.php:0
-[16-May-2016 11:32:36 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
+[16-May-2016 11:32:36 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/addUsersBd.php:7
 [16-May-2016 17:06:09 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /home/ubuntu/workspace/app/admin/usuarios.php on line 42
 [16-May-2016 17:54:25 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ',' or ';' in /home/ubuntu/workspace/app/admin/usuarios.php on line 38
-[18-May-2016 13:30:36 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:30:36 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:30:36 UTC] PHP Stack trace:
 [18-May-2016 13:30:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:30:36 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:30:36 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:30:36 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:30:36 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:30:36 UTC] PHP Stack trace:
 [18-May-2016 13:30:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:30:36 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:31:57 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:30:36 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:31:57 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:31:57 UTC] PHP Stack trace:
 [18-May-2016 13:31:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:31:57 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:31:57 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:31:57 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:31:57 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:31:57 UTC] PHP Stack trace:
 [18-May-2016 13:31:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:31:57 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:32:26 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:31:57 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:32:26 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:32:26 UTC] PHP Stack trace:
 [18-May-2016 13:32:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:32:26 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:32:26 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:32:26 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:32:26 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:32:26 UTC] PHP Stack trace:
 [18-May-2016 13:32:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:32:26 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:35:37 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:32:26 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:35:37 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:35:37 UTC] PHP Stack trace:
 [18-May-2016 13:35:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:35:37 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:35:37 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:35:37 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:35:37 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:35:37 UTC] PHP Stack trace:
 [18-May-2016 13:35:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:35:37 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:36:28 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:35:37 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:36:28 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:36:28 UTC] PHP Stack trace:
 [18-May-2016 13:36:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:36:28 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:36:28 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:36:28 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:36:28 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:36:28 UTC] PHP Stack trace:
 [18-May-2016 13:36:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:36:28 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:41:02 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:36:28 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:41:02 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:41:02 UTC] PHP Stack trace:
 [18-May-2016 13:41:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:41:02 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:41:02 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:41:02 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:41:02 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:41:02 UTC] PHP Stack trace:
 [18-May-2016 13:41:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:41:02 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:42:12 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:41:02 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:42:12 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:42:12 UTC] PHP Stack trace:
 [18-May-2016 13:42:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:42:12 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:42:12 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:42:12 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:42:12 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:42:12 UTC] PHP Stack trace:
 [18-May-2016 13:42:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:42:12 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:42:36 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:42:12 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:42:36 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:42:36 UTC] PHP Stack trace:
 [18-May-2016 13:42:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:42:36 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:42:36 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:42:36 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:42:36 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:42:36 UTC] PHP Stack trace:
 [18-May-2016 13:42:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:42:36 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:43:21 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:42:36 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:43:21 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:43:21 UTC] PHP Stack trace:
 [18-May-2016 13:43:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:43:21 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:43:21 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:43:21 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:43:21 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:43:21 UTC] PHP Stack trace:
 [18-May-2016 13:43:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:43:21 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:44:18 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:43:21 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:44:18 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:44:18 UTC] PHP Stack trace:
 [18-May-2016 13:44:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:44:18 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:44:18 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:44:18 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:44:18 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:44:18 UTC] PHP Stack trace:
 [18-May-2016 13:44:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:44:18 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:44:48 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:44:18 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:44:48 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:44:48 UTC] PHP Stack trace:
 [18-May-2016 13:44:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:44:48 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:44:48 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:44:48 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:44:48 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:44:48 UTC] PHP Stack trace:
 [18-May-2016 13:44:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:44:48 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:46:14 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:44:48 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:46:14 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:46:14 UTC] PHP Stack trace:
 [18-May-2016 13:46:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:46:14 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:46:14 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:46:14 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:46:14 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:46:14 UTC] PHP Stack trace:
 [18-May-2016 13:46:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:46:14 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:46:39 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:46:14 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:46:39 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:46:39 UTC] PHP Stack trace:
 [18-May-2016 13:46:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:46:39 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:46:39 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:46:39 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:46:39 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:46:39 UTC] PHP Stack trace:
 [18-May-2016 13:46:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:46:39 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:48:15 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:46:39 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:48:15 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:48:15 UTC] PHP Stack trace:
 [18-May-2016 13:48:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:48:15 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:48:15 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:48:15 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:48:15 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:48:15 UTC] PHP Stack trace:
 [18-May-2016 13:48:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:48:15 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:48:59 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:48:15 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:48:59 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:48:59 UTC] PHP Stack trace:
 [18-May-2016 13:48:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:48:59 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:48:59 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:48:59 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:48:59 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:48:59 UTC] PHP Stack trace:
 [18-May-2016 13:48:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:48:59 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:49:28 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:48:59 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:49:28 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:49:28 UTC] PHP Stack trace:
 [18-May-2016 13:49:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:49:28 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:49:28 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:49:28 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:49:28 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:49:28 UTC] PHP Stack trace:
 [18-May-2016 13:49:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:49:28 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:49:35 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:49:28 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:49:35 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:49:35 UTC] PHP Stack trace:
 [18-May-2016 13:49:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:49:35 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:49:35 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:49:35 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:49:35 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:49:35 UTC] PHP Stack trace:
 [18-May-2016 13:49:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:49:35 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:51:26 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:49:35 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:51:26 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:51:26 UTC] PHP Stack trace:
 [18-May-2016 13:51:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:51:26 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 13:51:26 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:51:26 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 13:51:26 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 13:51:26 UTC] PHP Stack trace:
 [18-May-2016 13:51:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 13:51:26 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 14:00:38 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 13:51:26 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 14:00:38 UTC] PHP Warning:  $sql->query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 14:00:38 UTC] PHP Stack trace:
 [18-May-2016 14:00:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 14:00:38 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
-[18-May-2016 14:00:38 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
+[18-May-2016 14:00:38 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 14:00:38 UTC] PHP Warning:  $sql->query(): A link to the server could not be established in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 14:00:38 UTC] PHP Stack trace:
 [18-May-2016 14:00:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/app/admin/consultaUser.php:0
-[18-May-2016 14:00:38 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
+[18-May-2016 14:00:38 UTC] PHP   2. $sql->query() /home/ubuntu/workspace/app/admin/consultaUser.php:3
 [18-May-2016 14:01:14 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [18-May-2016 14:02:18 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/app/admin/consultaUser.php on line 3
 [06-Jun-2016 18:20:24 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/ubuntu/workspace/app/admin/usuarios.php on line 20
@@ -283,21 +283,21 @@
 [01-Aug-2016 08:29:17 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/admin/gravaPed.php:0
 [01-Aug-2016 08:29:17 America/Sao_Paulo] PHP   2. erro() /home/ubuntu/workspace/app/admin/gravaPed.php:25
 [01-Aug-2016 08:29:17 America/Sao_Paulo] PHP   3. mysql_errno() /home/ubuntu/workspace/app/admin/gravaPed.php:11
-[01-Aug-2016 08:29:17 America/Sao_Paulo] PHP Warning:  mysql_error() expects parameter 1 to be resource, null given in /home/ubuntu/workspace/app/admin/gravaPed.php on line 11
+[01-Aug-2016 08:29:17 America/Sao_Paulo] PHP Warning:  mysqli_error($sql) expects parameter 1 to be resource, null given in /home/ubuntu/workspace/app/admin/gravaPed.php on line 11
 [01-Aug-2016 08:29:17 America/Sao_Paulo] PHP Stack trace:
 [01-Aug-2016 08:29:17 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/admin/gravaPed.php:0
 [01-Aug-2016 08:29:17 America/Sao_Paulo] PHP   2. erro() /home/ubuntu/workspace/app/admin/gravaPed.php:25
-[01-Aug-2016 08:29:17 America/Sao_Paulo] PHP   3. mysql_error() /home/ubuntu/workspace/app/admin/gravaPed.php:11
-[02-Aug-2016 11:22:10 America/Sao_Paulo] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/app/admin/admin_pedidos.php on line 19
+[01-Aug-2016 08:29:17 America/Sao_Paulo] PHP   3. mysqli_error($sql) /home/ubuntu/workspace/app/admin/gravaPed.php:11
+[02-Aug-2016 11:22:10 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/app/admin/admin_pedidos.php on line 19
 [02-Aug-2016 11:22:10 America/Sao_Paulo] PHP Stack trace:
 [02-Aug-2016 11:22:10 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/admin/admin_pedidos.php:0
-[02-Aug-2016 11:22:10 America/Sao_Paulo] PHP   2. mysql_num_rows() /home/ubuntu/workspace/app/admin/admin_pedidos.php:19
+[02-Aug-2016 11:22:10 America/Sao_Paulo] PHP   2. mysqli_num_rows() /home/ubuntu/workspace/app/admin/admin_pedidos.php:19
 [16-Aug-2016 14:09:07 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home/ubuntu/workspace/app/admin/admin_pedidos.php on line 19
 [16-Aug-2016 14:24:34 UTC] PHP Fatal error:  Can't use function return value in write context in /home/ubuntu/workspace/app/admin/admin_pedidos.php on line 23
-[19-Aug-2016 08:53:54 America/Sao_Paulo] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/app/cliente/cliente_pedidos.php on line 23
+[19-Aug-2016 08:53:54 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/app/cliente/cliente_pedidos.php on line 23
 [19-Aug-2016 08:53:54 America/Sao_Paulo] PHP Stack trace:
 [19-Aug-2016 08:53:54 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/cliente_pedidos.php:0
-[19-Aug-2016 08:53:54 America/Sao_Paulo] PHP   2. mysql_num_rows() /home/ubuntu/workspace/app/cliente/cliente_pedidos.php:23
+[19-Aug-2016 08:53:54 America/Sao_Paulo] PHP   2. mysqli_num_rows() /home/ubuntu/workspace/app/cliente/cliente_pedidos.php:23
 [19-Aug-2016 14:17:28 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ubuntu/workspace/app/cliente/consulta_ped.php on line 16
 [19-Aug-2016 14:18:47 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ubuntu/workspace/app/cliente/consulta_ped.php on line 16
 [19-Aug-2016 14:20:33 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ubuntu/workspace/app/cliente/consulta_ped.php on line 16
@@ -493,7 +493,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 	<p>Teste sua integração de pagamento sem alterar as transações reais</p> in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 	<p>Teste sua integraï¿½ï¿½o de pagamento sem alterar as transaï¿½ï¿½es reais</p> in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -577,7 +577,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 		<div class="securityPS">Todas as páginas do PagSeguro estão </br>em ambiente d in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 		<div class="securityPS">Todas as pï¿½ginas do PagSeguro estï¿½o </br>em ambiente d in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -589,7 +589,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): curityPS">Todas as páginas do PagSeguro estão </br>em ambiente de segurança</div in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): curityPS">Todas as pï¿½ginas do PagSeguro estï¿½o </br>em ambiente de seguranï¿½a</div in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -625,7 +625,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 				&copy; 1996-<time>2016</time> O melhor conteúdo. Todos os direitos reservado in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 				&copy; 1996-<time>2016</time> O melhor conteï¿½do. Todos os direitos reservado in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:55:28 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -822,7 +822,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 	<p>Teste sua integração de pagamento sem alterar as transações reais</p> in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 	<p>Teste sua integraï¿½ï¿½o de pagamento sem alterar as transaï¿½ï¿½es reais</p> in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -906,7 +906,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 		<div class="securityPS">Todas as páginas do PagSeguro estão </br>em ambiente d in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 		<div class="securityPS">Todas as pï¿½ginas do PagSeguro estï¿½o </br>em ambiente d in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -918,7 +918,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): curityPS">Todas as páginas do PagSeguro estão </br>em ambiente de segurança</div in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): curityPS">Todas as pï¿½ginas do PagSeguro estï¿½o </br>em ambiente de seguranï¿½a</div in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -954,7 +954,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 				&copy; 1996-<time>2016</time> O melhor conteúdo. Todos os direitos reservado in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 				&copy; 1996-<time>2016</time> O melhor conteï¿½do. Todos os direitos reservado in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 19:56:18 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1186,7 +1186,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 	<p>Teste sua integração de pagamento sem alterar as transações reais</p> in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 	<p>Teste sua integraï¿½ï¿½o de pagamento sem alterar as transaï¿½ï¿½es reais</p> in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1270,7 +1270,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 		<div class="securityPS">Todas as páginas do PagSeguro estão </br>em ambiente d in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 		<div class="securityPS">Todas as pï¿½ginas do PagSeguro estï¿½o </br>em ambiente d in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1282,7 +1282,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): curityPS">Todas as páginas do PagSeguro estão </br>em ambiente de segurança</div in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): curityPS">Todas as pï¿½ginas do PagSeguro estï¿½o </br>em ambiente de seguranï¿½a</div in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1318,7 +1318,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 				&copy; 1996-<time>2016</time> O melhor conteúdo. Todos os direitos reservado in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 				&copy; 1996-<time>2016</time> O melhor conteï¿½do. Todos os direitos reservado in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:10 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1515,7 +1515,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 	<p>Teste sua integração de pagamento sem alterar as transações reais</p> in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 	<p>Teste sua integraï¿½ï¿½o de pagamento sem alterar as transaï¿½ï¿½es reais</p> in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1599,7 +1599,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 		<div class="securityPS">Todas as páginas do PagSeguro estão </br>em ambiente d in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 		<div class="securityPS">Todas as pï¿½ginas do PagSeguro estï¿½o </br>em ambiente d in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1611,7 +1611,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): curityPS">Todas as páginas do PagSeguro estão </br>em ambiente de segurança</div in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): curityPS">Todas as pï¿½ginas do PagSeguro estï¿½o </br>em ambiente de seguranï¿½a</div in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1647,7 +1647,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 				&copy; 1996-<time>2016</time> O melhor conteúdo. Todos os direitos reservado in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 				&copy; 1996-<time>2016</time> O melhor conteï¿½do. Todos os direitos reservado in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:20:38 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1844,7 +1844,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 	<p>Teste sua integração de pagamento sem alterar as transações reais</p> in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 	<p>Teste sua integraï¿½ï¿½o de pagamento sem alterar as transaï¿½ï¿½es reais</p> in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1928,7 +1928,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 		<div class="securityPS">Todas as páginas do PagSeguro estão </br>em ambiente d in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 		<div class="securityPS">Todas as pï¿½ginas do PagSeguro estï¿½o </br>em ambiente d in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1940,7 +1940,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): curityPS">Todas as páginas do PagSeguro estão </br>em ambiente de segurança</div in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): curityPS">Todas as pï¿½ginas do PagSeguro estï¿½o </br>em ambiente de seguranï¿½a</div in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -1976,7 +1976,7 @@ Bytes: 0xE7 0xE3 0x6F 0x20 in /home/ubuntu/workspace/app/cliente/req_pagseg2.php
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
-[28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 				&copy; 1996-<time>2016</time> O melhor conteúdo. Todos os direitos reservado in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
+[28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Warning:  simplexml_load_string(): 				&copy; 1996-<time>2016</time> O melhor conteï¿½do. Todos os direitos reservado in /home/ubuntu/workspace/app/cliente/req_pagseg2.php on line 71
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP Stack trace:
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:0
 [28-Aug-2016 21:24:01 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagseg2.php:71
@@ -2041,7 +2041,7 @@ Bytes: 0xE1 0x67 0x69 0x6E in /home/ubuntu/workspace/app/cliente/req_pagsegHTML.
 [29-Aug-2016 09:08:49 America/Sao_Paulo] PHP Stack trace:
 [29-Aug-2016 09:08:49 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagsegHTML.php:0
 [29-Aug-2016 09:08:49 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagsegHTML.php:65
-[29-Aug-2016 09:08:49 America/Sao_Paulo] PHP Warning:  simplexml_load_string():         <title>PagSeguro Sandbox - Página não encontrada</title> in /home/ubuntu/workspace/app/cliente/req_pagsegHTML.php on line 65
+[29-Aug-2016 09:08:49 America/Sao_Paulo] PHP Warning:  simplexml_load_string():         <title>PagSeguro Sandbox - Pï¿½gina nï¿½o encontrada</title> in /home/ubuntu/workspace/app/cliente/req_pagsegHTML.php on line 65
 [29-Aug-2016 09:08:49 America/Sao_Paulo] PHP Stack trace:
 [29-Aug-2016 09:08:49 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/app/cliente/req_pagsegHTML.php:0
 [29-Aug-2016 09:08:49 America/Sao_Paulo] PHP   2. simplexml_load_string() /home/ubuntu/workspace/app/cliente/req_pagsegHTML.php:65

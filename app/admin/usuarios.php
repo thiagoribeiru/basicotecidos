@@ -13,21 +13,21 @@
         require_once('../barra_menu.php');
         ?>
         <div id="div_corpo">
-        <? if($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['usuarios']==1) {
-        $users_search = mysql_query("select id, nome, email, nivel, ativo, primeiro_acesso from usuarios where nivel <> '2'");
-        $users_online = mysql_query("select id_user as id from users_logados") or die (mysql_error());
-        if (mysql_num_rows($users_online)>0) {
-            for ($i=1;$i<=mysql_num_rows($users_online);$i++) {
-                $id_vet = mysql_fetch_array($users_online);
+        <? if((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['usuarios']) and $_SESSION['autoriza']['usuarios']==1)) {
+        $users_search = $sql->query("select id, nome, email, nivel, ativo, primeiro_acesso from usuarios where nivel <> '2'");
+        $users_online = $sql->query("select id_user as id from users_logados") or die (mysqli_error($sql));
+        if (mysqli_num_rows($users_online)>0) {
+            for ($i=1;$i<=mysqli_num_rows($users_online);$i++) {
+                $id_vet = mysqli_fetch_array($users_online);
                 // $id[$i] = $id_vet['id'];
                 $id[$id_vet['id']] = $id_vet['id'];
             }
         } else $id[0] = 0;
         // var_dump($id);
         echo "<form id=\"form_users\">\n";
-        if (mysql_num_rows($users_search)>0) {
+        if (mysqli_num_rows($users_search)>0) {
             echo "<span id=\"titulo\">Usuários";
-                if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['adicionar_usuario']==1)
+                if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['adicionar_usuario']) and $_SESSION['autoriza']['adicionar_usuario']==1))
                 echo "<div class=\"caixa_corte\"><img src=\"../images/icons-1-18x18.png\" id=\"adc_cli\"></div>";
             echo "</span>\n";
             echo "<div id=\"div_janela\" style=\"min-height: 200px; min-width: 536px;\">\n";
@@ -36,33 +36,33 @@
                         echo "<tr>\n";
                             echo "<td width=\"200px\">Nome</td>\n";
                             echo "<td width=\"300px\">E-mail</td>\n";
-                            if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['editar_usuario']==1)
+                            if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['editar_usuario']) and $_SESSION['autoriza']['editar_usuario']==1))
                             echo "<td width=\"18px\"></td>\n";
-                            if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['resetar_senha']==1)
+                            if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['resetar_senha']) and $_SESSION['autoriza']['resetar_senha']==1))
                             echo "<td width=\"18px\"></td>\n";
                             echo "<td width=\"18px\"></td>\n";
                         echo "</tr>\n";
                     echo "</thead>\n";
                     echo "<tbody>\n";
-                    for ($i=0;$i<mysql_num_rows($users_search);$i++) {
-                        $users_linha = mysql_fetch_array($users_search);
+                    for ($i=0;$i<mysqli_num_rows($users_search);$i++) {
+                        $users_linha = mysqli_fetch_array($users_search);
                         echo "<tr>\n";
                             if ($users_linha['primeiro_acesso']=='1') $destaca_amarelo = "bgcolor=\"#F2F5A9\""; else $destaca_amarelo = "";
                             echo "<td name=\"nome\" idd=\"".$users_linha['id']."\" $destaca_amarelo>".$users_linha['nome']."</td>\n";
                             echo "<td name=\"email\" idd=\"".$users_linha['id']."\" $destaca_amarelo>".$users_linha['email']."</td>\n";
-                            if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['editar_usuario']==1) {
+                            if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['editar_usuario']) and $_SESSION['autoriza']['editar_usuario']==1)) {
                                 echo "<td d_click=\"no\" $destaca_amarelo>\n";
                                     echo "<div class=\"caixa_corte\"><img src=\"../images/icons-1-18x18.png\" id=\"editar\" usr_id=\"".$users_linha['id']."\"></div>\n";
                                 echo "</td>\n";
                             }
-                            if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['resetar_senha']==1) {
+                            if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['resetar_senha']) and $_SESSION['autoriza']['resetar_senha']==1)) {
                                 if ($users_linha['primeiro_acesso']=='1') {
                                     echo "<td d_click=\"no\" $destaca_amarelo><div class=\"caixa_corte\"><img src=\"../images/icons-1-18x18.png\" id=\"senha_inicial\"></div></td>\n";
                                 } else {
                                     echo "<td d_click=\"no\" $destaca_amarelo><div class=\"caixa_corte\"><img src=\"../images/icons-1-18x18.png\" id=\"alt_senha\"></div></td>\n";
                                 }
                             }
-                            if ($users_linha['id']==$id[$users_linha['id']]) {
+                            if (isset($id[$users_linha['id']]) and $users_linha['id']==$id[$users_linha['id']]) {
                                 echo "<td d_click=\"no\" $destaca_amarelo id=\"status\"><div class=\"caixa_corte\"><img src=\"../images/status_icon.png\" id=\"status_on\"></div></td>\n";
                             } else {
                                 echo "<td d_click=\"no\" $destaca_amarelo id=\"status\"><div class=\"caixa_corte\"><img src=\"../images/status_icon.png\" id=\"status_off\"></div></td>\n";
@@ -75,7 +75,7 @@
         }
         echo "</form>\n";
         ?>
-            <?if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['editar_usuario']==1) {?>
+            <?if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['editar_usuario']) and $_SESSION['autoriza']['editar_usuario']==1)) {?>
             <div id="janela_edit_user">
                 <div class="caixa_corte">
                     <img src="../images/icons-1-18x18.png" id="fechar">
@@ -98,7 +98,7 @@
                         </div>
                         
                         <br><br>
-                        <?if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['editar_permissoes']==1) {?>
+                        <?if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['editar_permissoes']) and $_SESSION['autoriza']['editar_permissoes']==1)) {?>
                         <span id="permispermis" style="float: right;"></span><br><br>
                         <?}?>
                         <input type="submit" value="Saltar Alterações">

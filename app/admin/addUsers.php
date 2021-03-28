@@ -10,7 +10,7 @@
     <body popup='sim'>
         <?
         // require_once('../session.php');
-        if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['adicionar_usuario']==1) {
+        if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['adicionar_usuario']) and $_SESSION['autoriza']['adicionar_usuario']==1)) {
         ?>
         <form id="form_addUsers">
             <fieldset><legend>Cadastro de Usuários:</legend>

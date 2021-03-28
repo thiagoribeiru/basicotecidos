@@ -34,11 +34,12 @@ function redireciona_logout($dir_pad) {
     }
 }
 function somaPedido($cod_ped) {
+    global $sql;
     $total = 0;
-    $query = mysql_query("select subtotal from pedidos_itens where cod_ped = '$cod_ped'") or die(mysql_error());
-    if (mysql_num_rows($query)>0) {
-        for ($i=0;$i<mysql_num_rows($query);$i++) {
-            $valor = mysql_fetch_array($query);
+    $query = $sql->query("select subtotal from pedidos_itens where cod_ped = '$cod_ped'") or die(mysqli_error($sql));
+    if (mysqli_num_rows($query)>0) {
+        for ($i=0;$i<mysqli_num_rows($query);$i++) {
+            $valor = mysqli_fetch_array($query);
             $total += $valor['subtotal'];
         }
     }
@@ -73,7 +74,7 @@ if (count($_SESSION)==0) {
     redireciona_login($dir_padrao);
     exit;
 } else {
-    $url_vet = explode('/',getcwd());
+    $url_vet = explode('/',str_replace('\\','/',getcwd()));
     $pos_pasta = array_search($dir_padrao,$url_vet)+1;
     if ($_SESSION['primeiro_acesso']==1) {
         $pag = explode('/',$_SERVER['REQUEST_URI']);
@@ -94,7 +95,7 @@ if (count($_SESSION)==0) {
             exit;
         }
     }
-    // $pesq = mysql_fetch_array(mysql_query("select permissoes from usuarios where id = '".$_SESSION['UsuarioID']."'")) or die (mysql_error());
+    // $pesq = mysqli_fetch_array($sql->query("select permissoes from usuarios where id = '".$_SESSION['UsuarioID']."'")) or die (mysqli_error($sql));
     // $_SESSION['autoriza'] = unserialize($pesq['permissoes']);
 }
 ?>

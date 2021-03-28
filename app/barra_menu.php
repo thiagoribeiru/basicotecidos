@@ -13,18 +13,18 @@ echo "<div id=\"welcome\">\n";
                 echo "</li>\n";
             }
             //Menu Confirgurações
-            if ($_SESSION['UsuarioNivel']==0 and ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['configuracoes']==1)) {
+            if ($_SESSION['UsuarioNivel']==0 and ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['configuracoes']) and $_SESSION['autoriza']['configuracoes']==1))) {
                 echo "<li><a href=#>Configurações</a>\n";
                     echo "<ul class=\"wsubmenu-1\">\n";
-                        if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['usuarios']==1)
+                        if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['usuarios']) and $_SESSION['autoriza']['usuarios']==1))
                         echo "<li><a href=\"usuarios.php\">Usuários</a></li>\n";
-                        if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['parametros']==1)
+                        if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['parametros']) and $_SESSION['autoriza']['parametros']==1))
                         echo "<li><a href=\"configura.php\">Parâmetros</a></li>\n";
                     echo "</ul>\n";
                 echo "</li>\n";
             }
             //Menu Vendas
-            if ($_SESSION['UsuarioNivel']==0 and ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['vendas']==1)) {
+            if ($_SESSION['UsuarioNivel']==0 and ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['vendas']) and $_SESSION['autoriza']['vendas']==1))) {
                 echo "<li><a href=#>Vendas</a>\n";
                     // echo "<ul class=\"wsubmenu-1\">\n";
                     // 	echo "<li class=\"submenu-x\"><a href=#>Pedidos</a>\n";
@@ -34,13 +34,13 @@ echo "<div id=\"welcome\">\n";
                        // echo "</li>\n";
                     // echo "</ul>\n";
                     echo "<ul class=\"wsubmenu-1\">\n";
-                        if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['pedidos']==1)
+                        if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['pedidos']) and $_SESSION['autoriza']['pedidos']==1))
                         echo "<li><a href=\"admin_pedidos.php\">Pedidos</a></li>\n";
                     echo "</ul>\n";
                 echo "</li>\n";
             }
             //Menu Informações Sistema
-            if ($_SESSION['UsuarioNivel']==0 and $_SESSION['autoriza']['controle_total']==1) {
+            if ($_SESSION['UsuarioNivel']==0 and (isset($_SESSION['autoriza']['controle_total']) and (isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1))) {
                 echo "<li><a href=#>Info. Sistem.</a>\n";
                     echo "<ul class=\"wsubmenu-1\">\n";
                         echo "<li><a href=\"phpinfo.php\">Informações do PHP</a></li>\n";

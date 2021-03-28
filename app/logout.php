@@ -39,13 +39,13 @@
 			exit;
 		}
 		//pesquisa usuario bd
-		$userPesq = mysql_query("select id_user, id_sessao, validade from users_logados where id_user = ".$_SESSION['UsuarioID']);
-		$userSit = mysql_fetch_array($userPesq);
+		$userPesq = $sql->query("select id_user, id_sessao, validade from users_logados where id_user = ".$_SESSION['UsuarioID']);
+		$userSit = mysqli_fetch_array($userPesq);
 		
 		//verifica se ainda tem sessao aberta
-		$numIds = mysql_num_rows($userPesq);
+		$numIds = mysqli_num_rows($userPesq);
 			if (($numIds>0) and ($userSit['id_sessao']==session_id()))
-				mysql_query("delete from users_logados where id_user = ".$_SESSION['UsuarioID']) or die(mysql_error());
+				$sql->query("delete from users_logados where id_user = ".$_SESSION['UsuarioID']) or die(mysqli_error($sql));
 			
 		session_destroy(); 
 	redireciona_login($dir_padrao);

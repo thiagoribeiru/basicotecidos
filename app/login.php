@@ -1,9 +1,9 @@
 <?
 if (!isset($_SESSION)) session_start();
-if (isset($_SESSION) and $_SESSION['UsuarioNivel']=='0') {
+if (isset($_SESSION) and isset($_SESSION['UsuarioNivel']) and $_SESSION['UsuarioNivel']=='0') {
     header("Location: admin");
     exit;
-} else if (isset($_SESSION) and $_SESSION['UsuarioNivel']=='1') {
+} else if (isset($_SESSION) and isset($_SESSION['UsuarioNivel']) and $_SESSION['UsuarioNivel']=='1') {
     header("Location: cliente");
     exit;
 }

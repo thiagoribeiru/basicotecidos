@@ -21,17 +21,17 @@
                     $email = $_POST['email'];
                     $senha = strtoupper($_POST['tok2']);
                     
-                    $email_pesq = mysql_query("select email from usuarios where email = '$email' and id != '$id'") or die (mysql_error());
-                    if (mysql_num_rows($email_pesq)>0) {
+                    $email_pesq = $sql->query("select email from usuarios where email = '$email' and id != '$id'") or die (mysqli_error($sql));
+                    if (mysqli_num_rows($email_pesq)>0) {
                         echo "<script>alert('Opa! Esse e-mail já existe no sistema!');</script>";
                         echo "<script>window.location.href = 'primeiro_acesso.php';</script>";
                     } else {
-                        mysql_query("update usuarios set nome = '$nome', email = '$email', senha = sha1('$senha'), primeiro_acesso = 0 where id = '$id'") or die (mysql_error());
-                        $emailFromPesq = mysql_query("select email from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysql_error());
-                        $emailNotiPesq = mysql_query("select email from notificacoes where tipo = 'config' and ativo = '1'") or die (mysql_error());
-                        if (mysql_num_rows($emailFromPesq)>0 and mysql_num_rows($emailNotiPesq)>0) {
-                            $de = mysql_fetch_array($emailFromPesq);
-                            $para = mysql_fetch_array($emailNotiPesq);
+                        $sql->query("update usuarios set nome = '$nome', email = '$email', senha = sha1('$senha'), primeiro_acesso = 0 where id = '$id'") or die (mysqli_error($sql));
+                        $emailFromPesq = $sql->query("select email from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysqli_error($sql));
+                        $emailNotiPesq = $sql->query("select email from notificacoes where tipo = 'config' and ativo = '1'") or die (mysqli_error($sql));
+                        if (mysqli_num_rows($emailFromPesq)>0 and mysqli_num_rows($emailNotiPesq)>0) {
+                            $de = mysqli_fetch_array($emailFromPesq);
+                            $para = mysqli_fetch_array($emailNotiPesq);
                             $texto = 'O usuario '.$nome.' - '.$email.' finalizou seu primeiro acesso.';
                             enviaEmail($de['email'],$para['email'],'Alteração de primeiro acesso',$texto);
                         }
@@ -44,7 +44,7 @@
                     echo "Para continuar, é necessário preencher o formulário abaixo:<br></center>\n";
                     echo "<br>\n";
                     
-                    $user = mysql_fetch_array(mysql_query("select nome, email from usuarios where id = ".$_SESSION['UsuarioID']));
+                    $user = mysqli_fetch_array($sql->query("select nome, email from usuarios where id = ".$_SESSION['UsuarioID']));
                     $nome = $user['nome'];
                     $email = $user['email'];
                     

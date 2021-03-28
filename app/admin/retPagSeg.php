@@ -1,6 +1,7 @@
 <?
 require_once('../configapp.php');
 function escreveLog($string) {
+    global $sql;
     $name = 'logPagSeg.txt';
     $text = "\n".var_export($string, true);
     $file = fopen($name, 'a');
@@ -8,9 +9,10 @@ function escreveLog($string) {
     fclose($file);
 }
 function pegaDescPos($codepos) {
-    $descricaoPesq = mysql_query("select nome from pos_pedidos where id = '$codepos' and ativo = '1'") or die (mysql_error());
-    if (mysql_num_rows($descricaoPesq)>0) {
-        $descricao = mysql_fetch_array($descricaoPesq);
+    global $sql;
+    $descricaoPesq = $sql->query("select nome from pos_pedidos where id = '$codepos' and ativo = '1'") or die (mysqli_error($sql));
+    if (mysqli_num_rows($descricaoPesq)>0) {
+        $descricao = mysqli_fetch_array($descricaoPesq);
         $descricao = $descricao['nome'];
     } else $descricao = "(Posição não cadastrada)";
     return $descricao;
@@ -19,8 +21,8 @@ escreveLog($_POST);
 
 if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
     //Todo resto do código iremos inserir aqui.
-    $pesq_api = mysql_query("select * from dados_apipag where ativo = '1'") or die (mysql_query());
-        $dados = mysql_fetch_array($pesq_api);
+    $pesq_api = $sql->query("select * from dados_apipag where ativo = '1'") or die ($sql->query());
+        $dados = mysqli_fetch_array($pesq_api);
         if ($dados['environment']=='sandbox') {
             $urlp = 'https://ws.sandbox.pagseguro.uol.com.br/v2';
             $tokenp = $dados['tokensandbox'];
@@ -54,20 +56,20 @@ if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transacti
         $code = $transaction->code;
         $code = str_replace('-','-',$code);
         if ($status=='1' or $status=='2' or $status=='3' or $status=='4' or $status=='5' or $status=='6' or $status=='7') {
-            $ped_pesq = mysql_query("select * from pedidos_dados where cod_ped = '$reference' and ativo = '1'") or die (mysql_error());
-            if (mysql_num_rows($ped_pesq)>0) {
-                $pedido = mysql_fetch_array($ped_pesq);
+            $ped_pesq = $sql->query("select * from pedidos_dados where cod_ped = '$reference' and ativo = '1'") or die (mysqli_error($sql));
+            if (mysqli_num_rows($ped_pesq)>0) {
+                $pedido = mysqli_fetch_array($ped_pesq);
                 $sql_id_cli = $pedido['id_cli'];
                 $sql_code = $pedido['codepagseg'];
                 if ($sql_code=="") $sql_code = $code;
-                mysql_query("update pedidos_dados set ativo = '0' where cod_ped = '$reference' and ativo = '1'") or die(mysql_error());
-                mysql_query("insert into pedidos_dados (cod_ped,id_cli,id_pos,finalizado,codepagseg,ativo,data,usuario) values ('$reference','$sql_id_cli','$status','1','$sql_code','1',now(),'1')") or die(mysql_error());
+                $sql->query("update pedidos_dados set ativo = '0' where cod_ped = '$reference' and ativo = '1'") or die(mysqli_error($sql));
+                $sql->query("insert into pedidos_dados (cod_ped,id_cli,id_pos,finalizado,codepagseg,ativo,data,usuario) values ('$reference','$sql_id_cli','$status','1','$sql_code','1',now(),'1')") or die(mysqli_error($sql));
             }
         }
     }
-    $meioPagPesq = mysql_query("select descricao from pagseg_meio_pag where cod = ".$transaction->paymentMethod->code) or die(mysql_error());
-    if (mysql_num_rows($meioPagPesq)>0) {
-        $meioPag = mysql_fetch_array($meioPagPesq);
+    $meioPagPesq = $sql->query("select descricao from pagseg_meio_pag where cod = ".$transaction->paymentMethod->code) or die(mysqli_error($sql));
+    if (mysqli_num_rows($meioPagPesq)>0) {
+        $meioPag = mysqli_fetch_array($meioPagPesq);
         $meioPag = $meioPag['descricao'];
     } else $meioPag = "(Meio de pagamento não cadastrado)";
     $tabela = "";
@@ -83,16 +85,16 @@ if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transacti
         $tabela .= "</tr>\n";
     }
     $statusHist = "";
-    $estadoPesq = mysql_query("SELECT * FROM pedidos_dados where cod_ped = '$reference'") or die (mysql_error());
-    for ($st=0;$st<mysql_num_rows($estadoPesq);$st++) {
-        $estadoItem = mysql_fetch_array($estadoPesq);
+    $estadoPesq = $sql->query("SELECT * FROM pedidos_dados where cod_ped = '$reference'") or die (mysqli_error($sql));
+    for ($st=0;$st<mysqli_num_rows($estadoPesq);$st++) {
+        $estadoItem = mysqli_fetch_array($estadoPesq);
         $statusHist .= "<p style=\"margin: 0;\">".date("d/m/Y H:i",strtotime($estadoItem['data']))." ".pegaDescPos($estadoItem['id_pos'])."</p>\n";
     }
     
-    $emailFromPesq = mysql_query("select email from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysql_error());
-    $emailNotiPesq = mysql_query("select email from notificacoes where tipo = 'statusPagSeg' and ativo = '1'") or die (mysql_error());
-    if (mysql_num_rows($emailNotiPesq)>0 and mysql_num_rows($emailFromPesq)>0) {
-        $emailNoti = mysql_fetch_array($emailNotiPesq);
+    $emailFromPesq = $sql->query("select email from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysqli_error($sql));
+    $emailNotiPesq = $sql->query("select email from notificacoes where tipo = 'statusPagSeg' and ativo = '1'") or die (mysqli_error($sql));
+    if (mysqli_num_rows($emailNotiPesq)>0 and mysqli_num_rows($emailFromPesq)>0) {
+        $emailNoti = mysqli_fetch_array($emailNotiPesq);
         // multiple recipients
         $to  = $emailNoti['email'];
         
@@ -160,7 +162,7 @@ if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transacti
         $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
         
         // Additional headers
-        $emailFrom = mysql_fetch_array($emailFromPesq);
+        $emailFrom = mysqli_fetch_array($emailFromPesq);
         // $headers .= 'To: Mary <mary@example.com>, Kelly <kelly@example.com>' . "\r\n";
         $headers .= 'From: Basico Tecidos <'.$emailFrom['email'].'>' . "\r\n";
         // $headers .= 'Cc: birthdayarchive@example.com' . "\r\n";

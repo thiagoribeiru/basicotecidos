@@ -42,21 +42,22 @@
         // require_once('../session.php');
         require_once('../barra_menu.php');
         
-        if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['parametros']==1) {
+        if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['parametros']) and $_SESSION['autoriza']['parametros']==1)) {
         
+        $alertpagseg = "";
         if ($_SERVER['REQUEST_METHOD']=='POST') {
-            $sql_env = $_POST['environment'];
-            $sql_email = $_POST['e-mail'];
-            $sql_token = $_POST['token'];
-            $sql_tokensandbox = $_POST['tokensandbox'];
-            $sql_usuario = $_SESSION['UsuarioID'];
-            $sql_statusPagSeg = $_POST['statusPagSeg'];
-            $sql_novoCliente = $_POST['novoCliente'];
-            $sql_config = $_POST['config'];
+            $sql_env = (isset($_POST['environment'])) ? $_POST['environment'] : "";
+            $sql_email = (isset($_POST['e-mail'])) ? $_POST['e-mail'] : "";
+            $sql_token = (isset($_POST['token'])) ? $_POST['token'] : "";
+            $sql_tokensandbox = (isset($_POST['tokensandbox'])) ? $_POST['tokensandbox'] : "";
+            $sql_usuario = (isset($_SESSION['UsuarioID'])) ? $_SESSION['UsuarioID'] : "";
+            $sql_statusPagSeg = (isset($_POST['statusPagSeg'])) ? $_POST['statusPagSeg'] : "";
+            $sql_novoCliente = (isset($_POST['novoCliente'])) ? $_POST['novoCliente'] : "";
+            $sql_config = (isset($_POST['config'])) ? $_POST['config'] : "";
             
-            $statusPagSegPesq = mysql_query("select * from dados_apipag where ativo = '1'") or die (mysql_error());
-            if (mysql_num_rows($statusPagSegPesq)>0) {
-                $statusPagSeg = mysql_fetch_array($statusPagSegPesq);
+            $statusPagSegPesq = $sql->query("select * from dados_apipag where ativo = '1'") or die (mysqli_error($sql));
+            if (mysqli_num_rows($statusPagSegPesq)>0) {
+                $statusPagSeg = mysqli_fetch_array($statusPagSegPesq);
                 $ant_env = $statusPagSeg['environment'];
                 $ant_email = $statusPagSeg['email'];
                 $ant_token = $statusPagSeg['token'];
@@ -79,7 +80,7 @@
                 $pscampos .= "environment";
                 $psvalues .= "'$sql_env'";
                 $alteracoes ++;
-                if ($_SESSION['autoriza']['controle_total']!=1 and $_SESSION['autoriza']['editar_operacao']!=1) $unauthorized ++;
+                if ((!isset($_SESSION['autoriza']['controle_total']) or $_SESSION['autoriza']['controle_total']!=1) and (!isset($_SESSION['autoriza']['editar_operacao']) or $_SESSION['autoriza']['editar_operacao']!=1)) $unauthorized ++;
             } else if ($sql_env=="") {
                 $campovazio ++;
             } else {
@@ -91,7 +92,7 @@
                 $pscampos .= "email";
                 $psvalues .= "'$sql_email'";
                 $alteracoes ++;
-                if ($_SESSION['autoriza']['controle_total']!=1 and $_SESSION['autoriza']['editar_email_vendedor']!=1) $unauthorized ++;
+                if ((!isset($_SESSION['autoriza']['controle_total']) or $_SESSION['autoriza']['controle_total']!=1) and (!isset($_SESSION['autoriza']['editar_email_vendedor']) or $_SESSION['autoriza']['editar_email_vendedor']!=1)) $unauthorized ++;
             } else if ($sql_email=="") {
                 $campovazio ++;
             } else {
@@ -104,7 +105,7 @@
                 $pscampos .= "token";
                 $psvalues .= "'$sql_token'";
                 $alteracoes ++;
-                if ($_SESSION['autoriza']['controle_total']!=1 and $_SESSION['autoriza']['editar_token']!=1) $unauthorized ++;
+                if ((!isset($_SESSION['autoriza']['controle_total']) or $_SESSION['autoriza']['controle_total']!=1) and (!isset($_SESSION['autoriza']['editar_token']) or $_SESSION['autoriza']['editar_token']!=1)) $unauthorized ++;
             } else if (isset($_POST['token']) and $sql_token=="") {
                 $campovazio ++;
             } else {
@@ -117,7 +118,7 @@
                 $pscampos .= "tokensandbox";
                 $psvalues .= "'$sql_tokensandbox'";
                 $alteracoes ++;
-                if ($_SESSION['autoriza']['controle_total']!=1 and $_SESSION['autoriza']['editar_token_sandbox']!=1) $unauthorized ++;
+                if ((!isset($_SESSION['autoriza']['controle_total']) or $_SESSION['autoriza']['controle_total']!=1) and (!isset($_SESSION['autoriza']['editar_token_sandbox']) or $_SESSION['autoriza']['editar_token_sandbox']!=1)) $unauthorized ++;
             } else if (isset($_POST['tokensandbox']) and $sql_tokensandbox=="") {
                 $campovazio ++;
             } else {
@@ -125,16 +126,15 @@
                 $pscampos .= "tokensandbox";
                 $psvalues .= "'$ant_tokensandbox'";
             }
-            $alertpagseg = "";
             if ($alteracoes>0 and $campovazio==0 and $unauthorized==0) {
-                mysql_query("update dados_apipag set ativo = '0' where ativo = '1'") or die(mysql_error());
-                mysql_query("insert into dados_apipag ($pscampos,ativo,data,usuario) values($psvalues,'1',now(),$sql_usuario)") or die (mysql_error());
+                $sql->query("update dados_apipag set ativo = '0' where ativo = '1'") or die(mysqli_error($sql));
+                $sql->query("insert into dados_apipag ($pscampos,ativo,data,usuario) values($psvalues,'1',now(),$sql_usuario)") or die (mysqli_error($sql));
                 
-                $emailFromPesq = mysql_query("select email from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysql_error());
-                $emailNotiPesq = mysql_query("select email from notificacoes where tipo = 'config' and ativo = '1'") or die (mysql_error());
-                if (mysql_num_rows($emailFromPesq)>0 and mysql_num_rows($emailNotiPesq)>0) {
-                    $de = mysql_fetch_array($emailFromPesq);
-                    $para = mysql_fetch_array($emailNotiPesq);
+                $emailFromPesq = $sql->query("select email from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysqli_error($sql));
+                $emailNotiPesq = $sql->query("select email from notificacoes where tipo = 'config' and ativo = '1'") or die (mysqli_error($sql));
+                if (mysqli_num_rows($emailFromPesq)>0 and mysqli_num_rows($emailNotiPesq)>0) {
+                    $de = mysqli_fetch_array($emailFromPesq);
+                    $para = mysqli_fetch_array($emailNotiPesq);
                     $texto = 'As configurações do PagSeguro foram alteradas.';
                     enviaEmail($de['email'],$para['email'],'Alteração Configurações PagSeguro',$texto);
                 }
@@ -143,7 +143,7 @@
                 if ($campovazio != 0) $alertpagseg .= "*Preencher todos os campos!<br>";
             }
             
-            if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['editar_remetente']==1) {
+            if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['editar_remetente']) and $_SESSION['autoriza']['editar_remetente']==1)) {
                 $notir[] = $_POST['remetenteNoti'];
                 $tipr[] = 'remetenteNoti';
                 
@@ -151,29 +151,29 @@
                     $postdavez = $notir[$i];
                     $tipodavez = $tipr[$i];
                     $updates=0;
-                    $statusPagSegPesq = mysql_query("select * from notificacoes where tipo = '$tipodavez' and ativo = '1'") or die (mysql_error());
-                    if (mysql_num_rows($statusPagSegPesq)>0) {
-                        $ant_post = mysql_fetch_array($statusPagSegPesq);
+                    $statusPagSegPesq = $sql->query("select * from notificacoes where tipo = '$tipodavez' and ativo = '1'") or die (mysqli_error($sql));
+                    if (mysqli_num_rows($statusPagSegPesq)>0) {
+                        $ant_post = mysqli_fetch_array($statusPagSegPesq);
                         if ($postdavez!="" and $postdavez!=$ant_post['email']) {
-                            mysql_query("update notificacoes set ativo = '0' where tipo = '$tipodavez' and ativo = '1'") or die (mysql_error());
-                            mysql_query("insert into notificacoes (tipo,email,ativo,data,usuario) values ('$tipodavez','$postdavez','1',now(),'$sql_usuario')") or die (mysql_error());
+                            $sql->query("update notificacoes set ativo = '0' where tipo = '$tipodavez' and ativo = '1'") or die (mysqli_error($sql));
+                            $sql->query("insert into notificacoes (tipo,email,ativo,data,usuario) values ('$tipodavez','$postdavez','1',now(),'$sql_usuario')") or die (mysqli_error($sql));
                             $updates++;
                         } else if ($postdavez=="") {
-                            mysql_query("update notificacoes set ativo = '0' where tipo = '$tipodavez' and ativo = '1'") or die (mysql_error());
+                            $sql->query("update notificacoes set ativo = '0' where tipo = '$tipodavez' and ativo = '1'") or die (mysqli_error($sql));
                             $updates++;
                         }
                     } else {
                         if ($postdavez!="") {
-                            mysql_query("insert into notificacoes (tipo,email,ativo,data,usuario) values ('$tipodavez','$postdavez','1',now(),'$sql_usuario')") or die (mysql_error());
+                            $sql->query("insert into notificacoes (tipo,email,ativo,data,usuario) values ('$tipodavez','$postdavez','1',now(),'$sql_usuario')") or die (mysqli_error($sql));
                             $updates++;
                         }
                     }
                     if ($i==(count($notir)-1) and $updates>0) {
-                        $emailFromPesq = mysql_query("select email from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysql_error());
-                        $emailNotiPesq = mysql_query("select email from notificacoes where tipo = 'config' and ativo = '1'") or die (mysql_error());
-                        if (mysql_num_rows($emailFromPesq)>0 and mysql_num_rows($emailNotiPesq)>0) {
-                            $de = mysql_fetch_array($emailFromPesq);
-                            $para = mysql_fetch_array($emailNotiPesq);
+                        $emailFromPesq = $sql->query("select email from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysqli_error($sql));
+                        $emailNotiPesq = $sql->query("select email from notificacoes where tipo = 'config' and ativo = '1'") or die (mysqli_error($sql));
+                        if (mysqli_num_rows($emailFromPesq)>0 and mysqli_num_rows($emailNotiPesq)>0) {
+                            $de = mysqli_fetch_array($emailFromPesq);
+                            $para = mysqli_fetch_array($emailNotiPesq);
                             $texto = 'O remetente padrão do sistema foi alterado.';
                             enviaEmail($de['email'],$para['email'],'Alteração de Remetente Padrão',$texto);
                         }
@@ -181,7 +181,7 @@
                 }
             }
             
-            if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['editar_emails_de_notificacoes']==1) {
+            if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['editar_emails_de_notificacoes']) and $_SESSION['autoriza']['editar_emails_de_notificacoes']==1)) {
                 //tipos de notificação, adicionar no vetor $noti e $tip
                 // $noti[] = $_POST['postDaNotificação'];
                 // $tip[] = 'tipoDaNotificação';
@@ -196,29 +196,29 @@
                     $postdavez = $noti[$i];
                     $tipodavez = $tip[$i];
                     $updates=0;
-                    $statusPagSegPesq = mysql_query("select * from notificacoes where tipo = '$tipodavez' and ativo = '1'") or die (mysql_error());
-                    if (mysql_num_rows($statusPagSegPesq)>0) {
-                        $ant_post = mysql_fetch_array($statusPagSegPesq);
+                    $statusPagSegPesq = $sql->query("select * from notificacoes where tipo = '$tipodavez' and ativo = '1'") or die (mysqli_error($sql));
+                    if (mysqli_num_rows($statusPagSegPesq)>0) {
+                        $ant_post = mysqli_fetch_array($statusPagSegPesq);
                         if ($postdavez!="" and $postdavez!=$ant_post['email']) {
-                            mysql_query("update notificacoes set ativo = '0' where tipo = '$tipodavez' and ativo = '1'") or die (mysql_error());
-                            mysql_query("insert into notificacoes (tipo,email,ativo,data,usuario) values ('$tipodavez','$postdavez','1',now(),'$sql_usuario')") or die (mysql_error());
+                            $sql->query("update notificacoes set ativo = '0' where tipo = '$tipodavez' and ativo = '1'") or die (mysqli_error($sql));
+                            $sql->query("insert into notificacoes (tipo,email,ativo,data,usuario) values ('$tipodavez','$postdavez','1',now(),'$sql_usuario')") or die (mysqli_error($sql));
                             $updates++;
                         } else if ($postdavez=="") {
-                            mysql_query("update notificacoes set ativo = '0' where tipo = '$tipodavez' and ativo = '1'") or die (mysql_error());
+                            $sql->query("update notificacoes set ativo = '0' where tipo = '$tipodavez' and ativo = '1'") or die (mysqli_error($sql));
                             $updates++;
                         }
                     } else {
                         if ($postdavez!="") {
-                            mysql_query("insert into notificacoes (tipo,email,ativo,data,usuario) values ('$tipodavez','$postdavez','1',now(),'$sql_usuario')") or die (mysql_error());
+                            $sql->query("insert into notificacoes (tipo,email,ativo,data,usuario) values ('$tipodavez','$postdavez','1',now(),'$sql_usuario')") or die (mysqli_error($sql));
                             $updates++;
                         }
                     }
                     if ($i==(count($noti)-1) and $updates>0) {
-                        $emailFromPesq = mysql_query("select email from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysql_error());
-                        $emailNotiPesq = mysql_query("select email from notificacoes where tipo = 'config' and ativo = '1'") or die (mysql_error());
-                        if (mysql_num_rows($emailFromPesq)>0 and mysql_num_rows($emailNotiPesq)>0) {
-                            $de = mysql_fetch_array($emailFromPesq);
-                            $para = mysql_fetch_array($emailNotiPesq);
+                        $emailFromPesq = $sql->query("select email from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysqli_error($sql));
+                        $emailNotiPesq = $sql->query("select email from notificacoes where tipo = 'config' and ativo = '1'") or die (mysqli_error($sql));
+                        if (mysqli_num_rows($emailFromPesq)>0 and mysqli_num_rows($emailNotiPesq)>0) {
+                            $de = mysqli_fetch_array($emailFromPesq);
+                            $para = mysqli_fetch_array($emailNotiPesq);
                             $texto = 'Alguns e-mails de notificação foram alterados.';
                             enviaEmail($de['email'],$para['email'],'Alteração de Notificações',$texto);
                         }
@@ -227,9 +227,9 @@
             }
         }
         
-        $pesq_query = mysql_query("select * from dados_apipag where ativo = '1'") or die (mysql_error());
-        if (mysql_num_rows($pesq_query)>0) {
-            $pesq = mysql_fetch_array($pesq_query);
+        $pesq_query = $sql->query("select * from dados_apipag where ativo = '1'") or die (mysqli_error($sql));
+        if (mysqli_num_rows($pesq_query)>0) {
+            $pesq = mysqli_fetch_array($pesq_query);
             $environment = $pesq['environment'];
             $email = $pesq['email'];
             $token = $pesq['token'];
@@ -245,7 +245,7 @@
         ?>
         <div id="div_corpo">
             <form method="POST" action="">
-            <?if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['pagseguro']==1) {?>
+            <?if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['pagseguro']) and $_SESSION['autoriza']['pagseguro']==1)) {?>
             <fieldset>
                 <legend>Configurações PagSeguro</legend>
                     <table>
@@ -255,32 +255,37 @@
                         <tr>
                             <!--environment: aceita os valores production e sandbox.-->
                             <td><label>Operação:</label></td>
-                            <?if ($environment=="production") $selec1 = "checked";
-                            else if ($environment=="sandbox") $selec2 = "checked";
-                            if ($_SESSION['autoriza']['controle_total']!=1 and $_SESSION['autoriza']['editar_operacao']!=1) $disab = "disabled='true'";?>
+                            <?if ($environment=="production") {$selec1 = "checked"; $selec2="";}
+                            else if ($environment=="sandbox") {$selec1 = ""; $selec2 = "checked";}
+                            else {$selec1 = ""; $selec2 = "";}
+                            if ((!isset($_SESSION['autoriza']['controle_total']) or $_SESSION['autoriza']['controle_total']!=1) and (!isset($_SESSION['autoriza']['editar_operacao']) or $_SESSION['autoriza']['editar_operacao']!=1)) $disab = "disabled='true'";
+                            else $disab = "";?>
                             <td><input type="radio" name="environment" value="production" <?echo $selec1;?> <?echo $disab;?>>Produção</input>
                             <input type="radio" name="environment" value="sandbox" <?echo $selec2;?> <?echo $disab;?>>Teste</input></td>
                         </tr>
                         <tr>
                             <!--email: e-mail cadastrado.-->
                             <td><label>E-mail Vendedor:</label></td>
-                            <?if ($_SESSION['autoriza']['controle_total']!=1 and $_SESSION['autoriza']['editar_email_vendedor']!=1) $disab2 = "disabled='true'";?>
+                            <?if ((!isset($_SESSION['autoriza']['controle_total']) or $_SESSION['autoriza']['controle_total']!=1) and (!isset($_SESSION['autoriza']['editar_email_vendedor']) or $_SESSION['autoriza']['editar_email_vendedor']!=1)) $disab2 = "disabled='true'";
+                            else $disab2 = "";?>
                             <td><input type="email" name="e-mail" maxlength="40" size="50" value="<?echo $email?>" <?echo $disab2;?> /></td>
                         </tr>
-                        <?if ($exibeDados!=1 and ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['exibir_dados_confidenciais']==1)) {?>
+                        <?if ((!isset($exibeDados) or $exibeDados!=1) and ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['exibir_dados_confidenciais']) and $_SESSION['autoriza']['exibir_dados_confidenciais']==1))) {?>
                         <tr><td align="right" colspan="2" id="linps1"><a href="#" id="mostrar_dados_conf">Exibir dados confidenciais ▼</a></td></tr>
                         <?}?>
-                        <?if (($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['exibir_dados_confidenciais']==1)) {?>
-                        <tr<?if ($exibeDados!=1) echo " style='display: none;' id=\"linps2\"";?>>
+                        <?if (((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['exibir_dados_confidenciais']) and $_SESSION['autoriza']['exibir_dados_confidenciais']==1))) {?>
+                        <tr<?if ((!isset($exibeDados) or $exibeDados!=1)) echo " style='display: none;' id=\"linps2\"";?>>
                             <!--token production: token gerado no PagSeguro.-->
                             <td><label>Token:</label></td>
-                            <?if ($_SESSION['autoriza']['controle_total']!=1 and $_SESSION['autoriza']['editar_token']!=1) $disab3 = "disabled='true'";?>
+                            <?if ((!isset($_SESSION['autoriza']['controle_total']) or $_SESSION['autoriza']['controle_total']!=1) and (!isset($_SESSION['autoriza']['editar_token']) or $_SESSION['autoriza']['editar_token']!=1)) $disab3 = "disabled='true'";
+                            else $disab3 = "";?>
                             <td><input type="text" name="token" maxlength="32" size="50" value="<?echo $token?>" <?echo $disab3;?> /></td>
                         </tr>
-                        <tr<?if ($exibeDados!=1) echo " style='display: none;' id=\"linps3\"";?>>
+                        <tr<?if ((!isset($exibeDados) or $exibeDados!=1)) echo " style='display: none;' id=\"linps3\"";?>>
                             <!--token sandbox: token gerado no Sandbox.-->
                             <td><label>Token Sandbox:</label></td>
-                            <?if ($_SESSION['autoriza']['controle_total']!=1 and $_SESSION['autoriza']['editar_token_sandbox']!=1) $disab4 = "disabled='true'";?>
+                            <?if ((!isset($_SESSION['autoriza']['controle_total']) or $_SESSION['autoriza']['controle_total']!=1) and (!isset($_SESSION['autoriza']['editar_token_sandbox']) or $_SESSION['autoriza']['editar_token_sandbox']!=1)) $disab4 = "disabled='true'";
+                            else $disab4 = "";?>
                             <td><input type="text" name="tokensandbox" maxlength="32" size="50" value="<?echo $tokensandbox?>" <?echo $disab4;?> /></td>
                         </tr>
                         <?}?>
@@ -294,40 +299,42 @@
                     </table>
             </fieldset>
             <?}?>
-            <?if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['notificacoes_pos_email']==1) {?>
+            <?if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['notificacoes_pos_email']) and $_SESSION['autoriza']['notificacoes_pos_email']==1)) {?>
             <fieldset>
                 <legend>Notificações por e-mail</legend>
                     <table>
                         <tr>
-                            <?$remetenteNoti_query = mysql_query("select * from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysql_error());
-                            if (mysql_num_rows($remetenteNoti_query)>0) {
-                                $vlr = mysql_fetch_array($remetenteNoti_query);
+                            <?$remetenteNoti_query = $sql->query("select * from notificacoes where tipo = 'remetenteNoti' and ativo = '1'") or die (mysqli_error($sql));
+                            if (mysqli_num_rows($remetenteNoti_query)>0) {
+                                $vlr = mysqli_fetch_array($remetenteNoti_query);
                                 $vlr_remetenteNoti = $vlr['email'];
                             } else {
                                 $vlr_remetenteNoti = "";
                             }?>
                             <td><label>Remetente:</label></td>
-                            <?if ($_SESSION['autoriza']['controle_total']!=1 and $_SESSION['autoriza']['editar_remetente']!=1) $disab5 = " disabled='true'";?>
+                            <?if ((!isset($_SESSION['autoriza']['controle_total']) or $_SESSION['autoriza']['controle_total']!=1) and (!isset($_SESSION['autoriza']['editar_remetente']) or $_SESSION['autoriza']['editar_remetente']!=1)) $disab5 = " disabled='true'";
+                            else $disab5 = "";?>
                             <td><input type="email" name="remetenteNoti" size="44" maxlength="40" value="<?echo $vlr_remetenteNoti;?>" <?echo $disab5;?> /></td>
                         </tr>
                         <tr><td colspan="2"><img src="../images/SubDiv.jpg" style="width: 100%; height: 3px;"></td></tr>
                         <tr><td colspan="2" style="font-size: 9px;">Padrão: Nome Sobrenome &lt;email@dominio.com.br&gt;, email2@dominio.com (sem quebra de linha)</td></tr>
                         <tr>
-                            <?$statusPagSeg_query = mysql_query("select * from notificacoes where tipo = 'statusPagSeg' and ativo = '1'") or die (mysql_error());
-                            if (mysql_num_rows($statusPagSeg_query)>0) {
-                                $vlr = mysql_fetch_array($statusPagSeg_query);
+                            <?$statusPagSeg_query = $sql->query("select * from notificacoes where tipo = 'statusPagSeg' and ativo = '1'") or die (mysqli_error($sql));
+                            if (mysqli_num_rows($statusPagSeg_query)>0) {
+                                $vlr = mysqli_fetch_array($statusPagSeg_query);
                                 $vlr_statusPagSeg = $vlr['email'];
                             } else {
                                 $vlr_statusPagSeg = "";
                             }?>
-                            <?if ($_SESSION['autoriza']['controle_total']!=1 and $_SESSION['autoriza']['editar_emails_de_notificacoes']!=1) $disab6 = " disabled='true'";?>
+                            <?if ((!isset($_SESSION['autoriza']['controle_total']) or $_SESSION['autoriza']['controle_total']!=1) and (!isset($_SESSION['autoriza']['editar_emails_de_notificacoes']) or $_SESSION['autoriza']['editar_emails_de_notificacoes']!=1)) $disab6 = " disabled='true'";
+                            else $disab6 = "";?>
                             <td width="128px" style="vertical-align: top;"><label>Mudanças no status de pagamento:</label></td>
                             <td><textarea cols="50" rows="3" name="statusPagSeg" <?echo $disab6;?>><?echo $vlr_statusPagSeg;?></textarea></td>
                         </tr>
                         <tr>
-                            <?$novoCliente_query = mysql_query("select * from notificacoes where tipo = 'novoCliente' and ativo = '1'") or die (mysql_error());
-                            if (mysql_num_rows($novoCliente_query)>0) {
-                                $vlr = mysql_fetch_array($novoCliente_query);
+                            <?$novoCliente_query = $sql->query("select * from notificacoes where tipo = 'novoCliente' and ativo = '1'") or die (mysqli_error($sql));
+                            if (mysqli_num_rows($novoCliente_query)>0) {
+                                $vlr = mysqli_fetch_array($novoCliente_query);
                                 $vlr_novoCliente = $vlr['email'];
                             } else {
                                 $vlr_novoCliente = "";
@@ -336,9 +343,9 @@
                             <td><textarea cols="50" rows="3" name="novoCliente" <?echo $disab6;?>><?echo $vlr_novoCliente;?></textarea></td>
                         </tr>
                         <tr>
-                            <?$config_query = mysql_query("select * from notificacoes where tipo = 'config' and ativo = '1'") or die (mysql_error());
-                            if (mysql_num_rows($config_query)>0) {
-                                $vlr = mysql_fetch_array($config_query);
+                            <?$config_query = $sql->query("select * from notificacoes where tipo = 'config' and ativo = '1'") or die (mysqli_error($sql));
+                            if (mysqli_num_rows($config_query)>0) {
+                                $vlr = mysqli_fetch_array($config_query);
                                 $vlr_config = $vlr['email'];
                             } else {
                                 $vlr_config = "";

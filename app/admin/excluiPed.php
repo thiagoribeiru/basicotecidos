@@ -4,18 +4,18 @@ require_once('../configapp.php');
 if (!isset($_SESSION)) session_start();
 
     if ($_SERVER["REQUEST_METHOD"]=="GET") {
-        if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['remover_pedidos']==1) {
+        if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['remover_pedidos']) and $_SESSION['autoriza']['remover_pedidos']==1)) {
             $cod_ped = $_GET['cod_ped'];
-            $query = mysql_query("select * from pedidos_dados where cod_ped = '$cod_ped' and ativo = '1'") or die(mysql_error());
-            $numLinhas = mysql_num_rows($query);
+            $query = $sql->query("select * from pedidos_dados where cod_ped = '$cod_ped' and ativo = '1'") or die(mysqli_error($sql));
+            $numLinhas = mysqli_num_rows($query);
             if ($numLinhas==1) {
-                $ped = mysql_fetch_array($query);
+                $ped = mysqli_fetch_array($query);
                 if ($ped['finalizado']=='0') {
                     $id_cli = $ped['id_cli'];
                     $id_pos = $ped['id_pos'];
                     $usuario = $_SESSION['UsuarioID'];
-                    mysql_query("update pedidos_dados set ativo = '0' where cod_ped = '$cod_ped'") or die(mysql_query());
-                    mysql_query("insert into pedidos_dados (cod_ped,id_cli,id_pos,ativo,data,usuario) values ('$cod_ped','$id_cli','$id_pos','0',now(),'$usuario')") or die(mysql_query());
+                    $sql->query("update pedidos_dados set ativo = '0' where cod_ped = '$cod_ped'") or die($sql->query());
+                    $sql->query("insert into pedidos_dados (cod_ped,id_cli,id_pos,ativo,data,usuario) values ('$cod_ped','$id_cli','$id_pos','0',now(),'$usuario')") or die($sql->query());
                     $retorno['success']=1;
                 } else {
                     echo "O pedido não pode ser excluido pois já foi finalizado.";

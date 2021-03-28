@@ -15,16 +15,16 @@
         ?>
         <div id="div_corpo">
         <?
-        if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['pedidos']==1) {
-        $pedidos_search = mysql_query("select cod_ped as cod, DATE_FORMAT(data,'%d/%m/%Y') as data, (select usuarios.nome from usuarios where id = pedidos_dados.id_cli) as cliente, (select usuarios.email from usuarios where id = pedidos_dados.id_cli) as login, (select pos_pedidos.nome from pos_pedidos where id = pedidos_dados.id_pos) as posicao from pedidos_dados where ativo = '1' order by cod_ped");
+        if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['pedidos']) and $_SESSION['autoriza']['pedidos']==1)) {
+        $pedidos_search = $sql->query("select cod_ped as cod, DATE_FORMAT(data,'%d/%m/%Y') as data, (select usuarios.nome from usuarios where id = pedidos_dados.id_cli) as cliente, (select usuarios.email from usuarios where id = pedidos_dados.id_cli) as login, (select pos_pedidos.nome from pos_pedidos where id = pedidos_dados.id_pos) as posicao from pedidos_dados where ativo = '1' order by cod_ped");
         echo "<form id=\"form_pedidos\">\n";
         echo "<span id=\"titulo\" style=\"min-width: 300px;\">Pedidos";
-            if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['adicionar_pedidos']==1)
+            if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['adicionar_pedidos']) and $_SESSION['autoriza']['adicionar_pedidos']==1))
             echo "<div class=\"caixa_corte\"><img src=\"../images/icons-1-18x18.png\" title=\"Adicionar Pedidos\" id=\"adc_ped\"></div>";
-            if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['remover_pedidos']==1)
+            if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['remover_pedidos']) and $_SESSION['autoriza']['remover_pedidos']==1))
             echo "<div class=\"caixa_corte\"><img src=\"../images/icons-1-18x18.png\" title=\"Remover Pedido\" id=\"rem_ped\"></div>";
         echo "</span>\n";
-        if (mysql_num_rows($pedidos_search)>0) {
+        if (mysqli_num_rows($pedidos_search)>0) {
             echo "<div id=\"div_janela\" style=\"min-height: 400px; min-width: 955px;\">\n";
                 echo "<table class=\"tabela\" id=\"tabela_pedidos\">\n";
                     echo "<thead>\n";
@@ -38,8 +38,8 @@
                         echo "</tr>\n";
                     echo "</thead>\n";
                     echo "<tbody>\n";
-                    for ($i=0;$i<mysql_num_rows($pedidos_search);$i++) {
-                        $pedidos_linha = mysql_fetch_array($pedidos_search);
+                    for ($i=0;$i<mysqli_num_rows($pedidos_search);$i++) {
+                        $pedidos_linha = mysqli_fetch_array($pedidos_search);
                         echo "<tr ped=\"".$pedidos_linha['cod']."\">\n";
                             echo "<td>".mascara_string("####",$pedidos_linha['cod'])."</td>\n";
                             echo "<td>".$pedidos_linha['data']."</td>\n";
@@ -55,7 +55,7 @@
         }
         echo "</form>\n";
         ?>
-            <?if ($_SESSION['autoriza']['controle_total']==1 or $_SESSION['autoriza']['adicionar_pedidos']==1) {?>
+            <?if ((isset($_SESSION['autoriza']['controle_total']) and $_SESSION['autoriza']['controle_total']==1) or (isset($_SESSION['autoriza']['adicionar_pedidos']) and $_SESSION['autoriza']['adicionar_pedidos']==1)) {?>
             <div id="fundo_fumace">
                 <div id="tela_adc_ped">
                     

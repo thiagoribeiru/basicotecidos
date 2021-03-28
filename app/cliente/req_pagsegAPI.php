@@ -5,9 +5,9 @@ require_once('../PagSeguroLibrary/PagSeguroLibrary.php');
 if ($_SERVER['REQUEST_METHOD']=="GET" and $_GET['cod_ped']!="") {
     $ped = $_GET['cod_ped'];
     $paymentRequest = new PagSeguroPaymentRequest();  
-    $itens_pesq = mysql_query("select * from pedidos_itens where ativo = '1' and cod_ped = '$ped'") or die(mysql_error());
-    for ($i=0;$i<mysql_num_rows($itens_pesq);$i++) {
-        $item = mysql_fetch_array($itens_pesq);
+    $itens_pesq = $sql->query("select * from pedidos_itens where ativo = '1' and cod_ped = '$ped'") or die(mysqli_error($sql));
+    for ($i=0;$i<mysqli_num_rows($itens_pesq);$i++) {
+        $item = mysqli_fetch_array($itens_pesq);
         $desc = $item['descricao']." (".number_format($item['quant'],2,',','.')." ".$item['uni']." - ".number_format($item['valor'],2,',','.')."/".$item['uni'].")";
         $val = number_format($item['quant'],2,'.','')*number_format($item['valor'],2,'.','');
         $paymentRequest->addItem($item['cod_prod'], $desc, 1, $val);
@@ -24,10 +24,10 @@ if ($_SERVER['REQUEST_METHOD']=="GET" and $_GET['cod_ped']!="") {
     //   'SP',  
     //   'BRA'  
     // );
-    // $ped_pesq = mysql_query("select * from pedidos_dados where cod_ped = '$ped' and ativo = '1'") or die (mysql_error());
-    // $pedido = mysql_fetch_array($ped_pesq);
-    // $clie_pesq = mysql_query("select * from usuarios where ativo = '1' and id = '".$pedido['id_cli']."'") or die (mysql_error());
-    // $cliente = mysql_fetch_array($clie_pesq);
+    // $ped_pesq = $sql->query("select * from pedidos_dados where cod_ped = '$ped' and ativo = '1'") or die (mysqli_error($sql));
+    // $pedido = mysqli_fetch_array($ped_pesq);
+    // $clie_pesq = $sql->query("select * from usuarios where ativo = '1' and id = '".$pedido['id_cli']."'") or die (mysqli_error($sql));
+    // $cliente = mysqli_fetch_array($clie_pesq);
     // $paymentRequest->setSender(  
     //   $cliente['nome'].$cliente['nome']."".$cliente['nome'],  
     //   $cliente['email'],  
