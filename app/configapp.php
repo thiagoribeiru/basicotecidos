@@ -52,40 +52,12 @@ if (count(explode("basicotecidos.com.br",$_SERVER['SERVER_NAME']))>1) {
     } else {
     	tabelasIniciais();
     }
-}
-else if (count(explode("c9user",$_SERVER['SERVER_NAME']))>1) {
-	// A simple PHP script demonstrating how to connect to MySQL.
-    // Press the 'Run' button on the top to start the web server,
-    // then click the URL that is emitted to the Output tab of the console.
-	
-    $servername = getenv('IP');
-    $username = getenv('C9_USER');
-    $password = "";
-    $database = "c9";
-    $sqlport = 3306;
-    $tempoOcioso = 60*60;
-    $dir_padrao = "app";
-
-    // Create connection
-    $sql = mysqli_connect($servername.":".$sqlport,substr($username,0,16),$password) or trigger_error(mysqli_error($sql));
-	// Tenta se conectar a um banco de dados MySQL
-	$sql -> select_db($database) or trigger_error(mysqli_error($sql));
-	$sql->query("SET TIME_ZONE = 'America/Sao_Paulo'");
-	date_default_timezone_set('America/Sao_Paulo');
-
-    // Check connection
-    if ($sql->connect_error) {
-        die("Connection failed: " . $sql->connect_error);
-    } else {
-    	tabelasIniciais();
-    }
-}
-else if (count(explode("ribeirodesenvolvimentoweb.com.br",$_SERVER['SERVER_NAME']))>1) {
+} else if (count(explode("commitweb.com.br",$_SERVER['SERVER_NAME']))>1) {
 	error_reporting (E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 	$servidor='localhost';
-	$usuariosql='c3rdw';
-	$senhasql='thi102030';
-	$banco='c3basicotecidos';
+	$usuariosql='c0_portifolio';
+	$senhasql='DSFwroXjq28@';
+	$banco='c0_basicotecidos';
 	$tempoOcioso = 5*60;
 	$dir_padrao = "app";
 	
